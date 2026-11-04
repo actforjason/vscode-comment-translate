@@ -68,6 +68,7 @@ Third-party translation services can be found by searching for `@tag:translateSo
 ## Common Configurations
 * `commentTranslate.hover.enabled`: Enable/disable hover translation (quickly set through status)
 * `commentTranslate.hover.concise`: Enable/disable concise mode. Only triggers hover translation when pressing ctrl or command
+* `commentTranslate.hover.commentPrefix`: Enable/disable comment prefix hover. Shows a dashed underline on the first 2 characters of comments and translates when hovered
 * `commentTranslate.hover.string`: Enable/disable string hover translation
 * `commentTranslate.hover.content`: Enable/disable translation of hover content
 * `commentTranslate.multilineMerge`: Merge multiline comments

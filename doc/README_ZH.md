@@ -68,6 +68,7 @@
 ## 常用配置
 * `commentTranslate.hover.enabled`: 开启/关闭悬停翻译（可以通过状态快速设置）
 * `commentTranslate.hover.concise`: 开启/关闭简洁模式。开启后只有按住ctrl或command才会触发悬浮翻译
+* `commentTranslate.hover.commentPrefix`: 开启/关闭注释前缀悬浮。开启后在注释开头前两个字符显示虚线下划线，鼠标悬浮即可翻译
 * `commentTranslate.hover.string`: 开启/关闭字符串悬停翻译
 * `commentTranslate.hover.content`: 开启/关闭翻译悬停内容
 * `commentTranslate.multilineMerge`: 合并多行注释

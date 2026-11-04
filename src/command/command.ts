@@ -1,8 +1,18 @@
-import { commands, ExtensionContext } from "vscode";
+import { commands, ExtensionContext, window } from "vscode";
+import { triggerManualHover } from "../languageFeature/hover";
 import { changeTargetLanguage, changeTranslateSource, openOutputPannel, toggleBrowseMode, toggleEnableHover, toggleMultiLineMerge, toggleTempBrowseMode } from "./changeTargetLanguage";
 import { quickTranslationCommand, selectAllComment, selectAllText, translateAllComment, translateAllText, translateTerminalForCopilotChatCommand } from "./file";
 import { nameVariableCommand, replaceRange, replaceSelections } from "./replaceSelections";
 import { addSelection, clipboard, selectLastHover } from "./select";
+
+export async function showHoverCommand() {
+    const editor = window.activeTextEditor;
+    if (!editor) return;
+
+    const pos = editor.selection.active;
+    triggerManualHover(editor.document.uri.toString(), pos.line);
+    await commands.executeCommand('editor.action.showHover');
+}
 
 export function registerCommands(context: ExtensionContext) {
     context.subscriptions.push(
@@ -27,5 +37,6 @@ export function registerCommands(context: ExtensionContext) {
         commands.registerCommand('commentTranslate.translateForCopilotChat', quickTranslationCommand), // add context
         commands.registerCommand('commentTranslate.translateTerminalForCopilotChat', translateTerminalForCopilotChatCommand),
         commands.registerCommand('commentTranslate.nameVariable', nameVariableCommand), // add keyboard
+        commands.registerCommand('commentTranslate.showHover', showHoverCommand),
     );
 }

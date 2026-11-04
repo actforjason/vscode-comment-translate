@@ -1,6 +1,7 @@
 {
     "commentTranslate.displayName": "Commenta Traduci",
     "commentTranslate.description": "Questo plugin utilizza l'API di Google Translate per tradurre i commenti per il linguaggio di programmazione VSCode.",
+    "commentTranslate.command.showHover": "Show Hover Translation",
     "commentTranslate.command.select": "Seleziona rapidamente l'ultima area di traduzione",
     "commentTranslate.command.clipboard": "Traduci Appunti",
     "commentTranslate.command.selectAllText": "Seleziona rapidamente tutte le stringhe nel file",
@@ -15,8 +16,10 @@
     "commentTranslate.command.translateForCopilotChat": "Traduci il testo selezionato e visualizzalo in GitHub Copilot Chat",
     "commentTranslate.command.nameVariable": "Assegnazione di variabili dalle descrizioni tradotte",
     "commentTranslate.configuration.concise": "Modalità concisa. Se attivato, solo premendo Ctrl o Comando verrà attivata la traduzione mobile",
+    "commentTranslate.configuration.commentPrefix": "Comment prefix hover. If enabled, shows a dashed underline on the first 2 characters of comments and translates when hovered",
     "commentTranslate.configuration.contentHover": "Traduci contenuto al passaggio del mouse",
     "commentTranslate.configuration.targetLanguage": "Traduzione nella lingua di destinazione",
+    "commentTranslate.configuration.proxy": "Custom proxy server address. Leave empty to auto-detect VS Code/system proxy (e.g. http://127.0.0.1:7890)",
     "commentTranslate.configuration.source": "Traduci servcie source. Google, Bing, Baidu sono stati integrati.",
     "commentTranslate.configuration.browseEnabled": "Abilita traduzione durante la navigazione dei commenti",
     "commentTranslate.configuration.browseMode": "Modalità di navigazione dei commenti",

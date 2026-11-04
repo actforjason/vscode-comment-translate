@@ -1,6 +1,7 @@
 {
     "commentTranslate.displayName": "Комментарий Перевести",
     "commentTranslate.description": "Этот плагин использует API Google Translate для перевода комментариев для языка программирования VSCode.",
+    "commentTranslate.command.showHover": "Show Hover Translation",
     "commentTranslate.command.select": "Быстрый выбор последней области перевода",
     "commentTranslate.command.clipboard": "Перевести буфер обмена",
     "commentTranslate.command.selectAllText": "Быстрое выделение всех строк в файле",
@@ -15,8 +16,10 @@
     "commentTranslate.command.translateForCopilotChat": "Перевести выделенный текст и отобразить в GitHub Copilot Chat",
     "commentTranslate.command.nameVariable": "Назначение переменных из переведенных описаний",
     "commentTranslate.configuration.concise": "Лаконичный режим. Если он включен, только нажатие Ctrl или Command вызовет плавающий перевод",
+    "commentTranslate.configuration.commentPrefix": "Comment prefix hover. If enabled, shows a dashed underline on the first 2 characters of comments and translates when hovered",
     "commentTranslate.configuration.contentHover": "Перевод содержимого наведения",
     "commentTranslate.configuration.targetLanguage": "Перевод на целевой язык",
+    "commentTranslate.configuration.proxy": "Custom proxy server address. Leave empty to auto-detect VS Code/system proxy (e.g. http://127.0.0.1:7890)",
     "commentTranslate.configuration.source": "Перевести servcie source. Google, Bing, Baidu были встроены.",
     "commentTranslate.configuration.browseEnabled": "Включить перевод при просмотре комментариев",
     "commentTranslate.configuration.browseMode": "Режим просмотра комментариев",

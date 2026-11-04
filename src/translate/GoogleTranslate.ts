@@ -2,6 +2,7 @@ import { BaseTranslate } from './baseTranslate';
 import got from 'got';
 import { ITranslateOptions,encodeMarkdownUriComponent } from 'comment-translate-manager';
 import { getConfig } from '../configuration';
+import { getProxyAgent } from '../util/proxy';
 const querystring = require('querystring');
 const GoogleToken: IGetToken = require('google-translate-token-with-mirror');
 interface IGetToken {
@@ -20,7 +21,12 @@ export class GoogleTranslate extends BaseTranslate {
     async _translate(content: string, { from = 'auto', to = 'auto' }: ITranslateOptions): Promise<string> {
         let tld = getConfig<string>('googleTranslate.tld', 'com');
         let mirror = getConfig<string>('googleTranslate.mirror', '');
-        let token = await GoogleToken.get(content, { tld, mirror });
+        let token: any;
+        try {
+            token = await GoogleToken.get(content, { tld, mirror });
+        } catch (e) {
+            // client: 'gtx' works without token
+        }
         let url = 'https://translate.google.' + tld + '/translate_a/single';
         if (mirror !== "") {
             url = mirror + '/translate_a/single';
@@ -39,11 +45,16 @@ export class GoogleTranslate extends BaseTranslate {
             kc: 7,
             q: content
         };
-        data[token.name] = token.value;
+        if (token && token.name) {
+            data[token.name] = token.value;
+        }
         url = url + '?' + querystring.stringify(data);
-        let res:any = await got(url, {
-            timeout: {request:10000}, headers: {
-                'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36'
+        const agent = getProxyAgent();
+        let res: any = await got(url, {
+            agent: agent ? { https: agent, http: agent } : undefined,
+            timeout: { request: 10000 },
+            headers: {
+                'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
             }
         }).json();
 

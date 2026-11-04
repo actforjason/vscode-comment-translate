@@ -1,6 +1,7 @@
 {
     "commentTranslate.displayName": "コメント翻訳",
     "commentTranslate.description": "このプラグインは、開発者がコード内のコメント、文字列、コードヒント、エラーメッセージ、変数名などの内容を翻訳するのを支援します。",
+    "commentTranslate.command.showHover": "Show Hover Translation",
     "commentTranslate.command.select": "最後の翻訳領域を素早く選択",
     "commentTranslate.command.clipboard": "クリップボードを翻訳する",
     "commentTranslate.command.selectAllText": "ファイル内のすべての文字列をすばやく選択する",
@@ -15,8 +16,10 @@
     "commentTranslate.command.translateForCopilotChat": "選択したテキストを翻訳してGitHub Copilot Chatに表示",
     "commentTranslate.command.nameVariable": "翻訳された説明から変数名を付ける",
     "commentTranslate.configuration.concise": "簡潔なモード.オンにするとctrlまたはcommandを押すだけで懸濁翻訳がトリガーされます",
+    "commentTranslate.configuration.commentPrefix": "Comment prefix hover. If enabled, shows a dashed underline on the first 2 characters of comments and translates when hovered",
     "commentTranslate.configuration.contentHover": "ホバーコンテンツを翻訳する",
     "commentTranslate.configuration.targetLanguage": "ターゲット言語への翻訳",
+    "commentTranslate.configuration.proxy": "Custom proxy server address. Leave empty to auto-detect VS Code/system proxy (e.g. http://127.0.0.1:7890)",
     "commentTranslate.configuration.source": "サービスソースの翻訳",
     "commentTranslate.configuration.openHover": "オープンホバー翻訳",
     "commentTranslate.configuration.stringHover": "翻訳文字列",

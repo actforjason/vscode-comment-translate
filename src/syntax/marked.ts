@@ -102,7 +102,11 @@ export function hasVisibleHtmlContent(html: string): boolean {
     return textContent.length > 0;
 }
 
-export async function getMarkdownTextValue(markStr: string) {
+export interface IMarkdownOptions {
+    excludeCode?: boolean;
+}
+
+export async function getMarkdownTextValue(markStr: string, options?: IMarkdownOptions) {
     let textArr: string[] = [];
     let translatedTask: Promise<string>;
 
@@ -147,8 +151,19 @@ export async function getMarkdownTextValue(markStr: string) {
 
     let hasTranslated = false;
 
+    const activeRenderer = options?.excludeCode
+        ? Object.assign(Object.create(renderer), {
+            code() {
+                return "";
+            },
+            hr() {
+                return "";
+            }
+        })
+        : renderer;
+
     let result = await marked.parse(markStr, {
-        renderer,
+        renderer: activeRenderer,
         walkTokens: async (token) => {
 
             if (token.type === "link" && token.title) {
@@ -194,6 +209,9 @@ export async function getMarkdownTextValue(markStr: string) {
         async: true,
     });
     result = removeTrailingNewlines(result);
+    if (options?.excludeCode) {
+        result = result.replace(/^(\s*[-*_]{3,}\s*)+/, "").trim();
+    }
     return { result, hasTranslated };
 }
 

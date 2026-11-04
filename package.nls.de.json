@@ -1,6 +1,7 @@
 {
     "commentTranslate.displayName": "Kommentar Übersetzen",
     "commentTranslate.description": "Dieses Plugin verwendet die Google Translate API, um Kommentare für die Programmiersprache VSCode zu übersetzen.",
+    "commentTranslate.command.showHover": "Show Hover Translation",
     "commentTranslate.command.select": "Schnelles Auswählen des letzten Übersetzungsbereichs",
     "commentTranslate.command.clipboard": "Zwischenablage übersetzen",
     "commentTranslate.command.selectAllText": "Schnelles Auswählen aller Zeichenfolgen in der Datei",
@@ -15,8 +16,10 @@
     "commentTranslate.command.translateForCopilotChat": "Ausgewählten Text übersetzen und im GitHub Copilot Chat anzeigen",
     "commentTranslate.command.nameVariable": "Variablenbenennung aus übersetzten Beschreibungen",
     "commentTranslate.configuration.concise": "Prägnanter Modus. Wenn diese Option aktiviert ist, löst nur das Drücken von Strg oder Befehl eine schwebende Übersetzung aus",
+    "commentTranslate.configuration.commentPrefix": "Comment prefix hover. If enabled, shows a dashed underline on the first 2 characters of comments and translates when hovered",
     "commentTranslate.configuration.contentHover": "Übertragen von Hover-Inhalten",
     "commentTranslate.configuration.targetLanguage": "Übersetzung in die Zielsprache",
+    "commentTranslate.configuration.proxy": "Custom proxy server address. Leave empty to auto-detect VS Code/system proxy (e.g. http://127.0.0.1:7890)",
     "commentTranslate.configuration.source": "Servcie Quelle übersetzen. Google, Bing, Baidu wurden eingebaut.",
     "commentTranslate.configuration.browseEnabled": "Kommentar-Browsing-Übersetzung aktivieren",
     "commentTranslate.configuration.browseMode": "Kommentar-Browsing-Modus",

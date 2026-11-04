@@ -39,7 +39,7 @@ class ConciseDecorationManager {
         window.onDidChangeTextEditorVisibleRanges(debounce(this.update.bind(this)), null, this.disposables);
         window.onDidChangeActiveTextEditor(debounce(this.update.bind(this)), null, this.disposables);
 
-        onConfigChange('hover.concise', () => {
+        onConfigChange('hover.commentPrefix', () => {
             this.update();
         }, null, this.disposables);
 
@@ -50,10 +50,10 @@ class ConciseDecorationManager {
     }
 
     private async update() {
-        const concise = getConfig<boolean>("hover.concise");
+        const commentPrefix = getConfig<boolean>("hover.commentPrefix");
         const editor = window.activeTextEditor;
 
-        if (!concise || !editor || !this.canLanguages.includes(editor.document.languageId)) {
+        if (!commentPrefix || !editor || !this.canLanguages.includes(editor.document.languageId)) {
             this.clear(editor);
             return;
         }

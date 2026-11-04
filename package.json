@@ -148,9 +148,20 @@
                 "title": "%commentTranslate.command.openMarkdownTranslatePreview%",
                 "icon": "$(symbol-null)",
                 "category": "Comment Translate"
+            },
+            {
+                "command": "commentTranslate.showHover",
+                "title": "%commentTranslate.command.showHover%",
+                "category": "Comment Translate"
             }
         ],
         "keybindings": [
+            {
+                "command": "commentTranslate.showHover",
+                "key": "alt+shift+h",
+                "mac": "ctrl+shift+h",
+                "when": "editorTextFocus"
+            },
             {
                 "command": "commentTranslate.select",
                 "key": "alt+shift+s",
@@ -774,6 +785,12 @@
                         "order": 22,
                         "description": "%commentTranslate.configuration.concise%"
                     },
+                    "commentTranslate.hover.commentPrefix": {
+                        "type": "boolean",
+                        "default": false,
+                        "order": 23,
+                        "description": "%commentTranslate.configuration.commentPrefix%"
+                    },
                     "commentTranslate.hover.content": {
                         "type": "boolean",
                         "default": true,
@@ -822,6 +839,12 @@
                         "type": "boolean",
                         "default": true,
                         "description": "%commentTranslate.configuration.markdownScopeFallback%"
+                    },
+                    "commentTranslate.proxy": {
+                        "type": "string",
+                        "default": "",
+                        "order": 28,
+                        "description": "%commentTranslate.configuration.proxy%"
                     },
                     "commentTranslate.source": {
                         "type": "string",

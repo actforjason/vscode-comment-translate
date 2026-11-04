@@ -9,6 +9,7 @@ import { registerCommands } from './command/command';
 // import { mouseToSelect } from './command/select';
 import { showHoverStatusBar, showTargetLanguageStatusBarItem } from './configuration';
 import { registerHover } from './languageFeature/hover';
+import { registerDefinition } from './languageFeature/definition';
 import { AliTranslate } from './plugin/translateAli';
 import { ITranslateRegistry } from 'comment-translate-manager';
 import { createComment } from './syntax/Comment';
@@ -39,6 +40,7 @@ export async function activate(context: ExtensionContext) {
     createComment();
     registerCommands(context);
     registerHover(context, canLanguages);
+    registerDefinition(context, canLanguages);
     registerCompletion(context, canLanguages);
     registerChatParticipant(context);
     conciseDecorationManager.register(context, canLanguages);
